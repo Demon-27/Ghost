@@ -1,10 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Ghost</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ghost - Find Cheaper Alternatives</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Welcome to Ghost 👻</h1>
-  <p>A lightweight, privacy-focused platform for anonymous interaction.</p>
+
+  <header class="hero">
+    <nav>
+      <h2>Ghost 👻</h2>
+      <button id="savedBtn">Saved Items</button>
+    </nav>
+
+    <div class="hero-content">
+      <h1>Find cheaper alternatives before you buy.</h1>
+      <p>Search any product and Ghost will suggest better-value options.</p>
+
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search iPhone, shoes, laptop..." />
+        <button onclick="searchProducts()">Search</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="filters">
+    <select id="priceFilter" onchange="searchProducts()">
+      <option value="all">All Prices</option>
+      <option value="500">Under ₹500</option>
+      <option value="2000">Under ₹2,000</option>
+      <option value="10000">Under ₹10,000</option>
+      <option value="50000">Under ₹50,000</option>
+    </select>
+
+    <select id="ratingFilter" onchange="searchProducts()">
+      <option value="all">All Ratings</option>
+      <option value="4">4★ & above</option>
+      <option value="4.5">4.5★ & above</option>
+    </select>
+  </section>
+
+  <main>
+    <h2 id="resultTitle">Popular Alternatives</h2>
+    <div id="productContainer" class="product-grid"></div>
+  </main>
+
+  <footer>
+    <p>Ghost helps you compare smarter before buying.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
